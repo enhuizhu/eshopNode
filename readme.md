@@ -110,53 +110,6 @@ all the test filses should be put inside "spec".
 
 the name of the test file must be *[S]spec.js.
 
-###7. How to use search api?###
-
-the path of the api is:
-```	
-/search
-```
-here is the example of request header:
-```
-POST /search HTTP/1.1
-Host: localhost:3000
-Cache-Control: no-cache
-
-{ "q":"test", "action":"nextPageToken", "actionValue":"CBQQAQ" }
-```
-if you want to see the next page of search result, you can send following json:
-
-```
-{
-	"q":"test",
-    "action":"nextPageToken",
-    "actionValue":"CBQQAQ"
-}
-```
-if you want to see tne previouse page of search result, you can dend following json:
-
-```
-{
-	"q":"test",
-    "action":"prevPageToken",
-    "actionValue":"CCgQAA"
-}
-```
-
-you can get the token value from the api respone:
-
-```
- "kind": "youtube#searchListResponse",
-    "etag": "\"0Fu6lI6VPLdRMlQU3wwNcowdAUs/2FOWlSS7DAFMRd_gZUxEo_eoUxQ\"",
-    "nextPageToken": "CCgQAA",
-    "prevPageToken": "CBQQAQ",
-    "regionCode": "GB",
-    "pageInfo": {
-        "totalResults": 1000000,
-        "resultsPerPage": 20
-    },
-```
-
 
 
 
