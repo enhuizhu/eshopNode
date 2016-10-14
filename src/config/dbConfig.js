@@ -1,7 +1,7 @@
 "use strict";
 
 const dbConfig = {
-    "default": "mongodb",
+    "default": "mysql",
 
     "mongodb": {
     	DATABASE: "media"
@@ -10,7 +10,7 @@ const dbConfig = {
 	"mysql": {
 		HOST: "172.28.128.3",
 		USER: "root",
-		PASSWORD: "roowpw",
+		PASSWORD: "rootpw",
 		DATABASE: "eshop"
 	}
 }
