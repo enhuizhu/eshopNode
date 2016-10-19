@@ -4,6 +4,8 @@ import socketIo from "socket.io";
 import expressSetting from "./config/expressConfig.js";
 import route from "./routes/route.js";
 import {dbConfig} from "./config/dbConfig";
+import liveOrderService from "./services/liveOrderService.js";
+
 /**
 * should check the default database
 **/
@@ -25,17 +27,6 @@ httpApp.listen(8080);
 
 let io = socketIo(httpApp);
 
-io.on('connection', (socket) => {
-	console.info('a user connected!');
-
-	socket.on('disconnect', function() {
-		console.info('user disconnect');
-	});
-
-	socket.on("sendMessage", (msg) => {
-		console.info('get message');
-	});
-
-});
+new liveOrderService(io);
 
 console.log("server running at http://127.0.0.1:8080");
