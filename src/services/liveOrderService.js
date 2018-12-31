@@ -9,14 +9,14 @@ class liveOrderService {
 		this.io = io;
 		this.io.on('connection', this.onSocketIoConnection.bind(this));
 		
-		let subcriber = redis.createClient();
+		let subcriber = redis.createClient('6379', 'redis');
 		subcriber.on('subscribe', this.onSubscribe.bind(this));
 		subcriber.on('message', this.onMessage.bind(this));
 		subcriber.subscribe(PLACE_ORDER);
 	}
 
 	onSocketIoConnection(socket) {
-
+		console.log('socket io connected!');
 	}
 
 	onSubscribe(changel, count) {

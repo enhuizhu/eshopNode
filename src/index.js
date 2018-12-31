@@ -23,10 +23,10 @@ app.use(express.static(__dirname + '/public'));
 new route(app);
 
 let httpApp = http.Server(app);
-httpApp.listen(8080);
+httpApp.listen(7000);
 
 let io = socketIo(httpApp);
 
 new liveOrderService(io);
 
-console.log("server running at http://127.0.0.1:8080");
+console.log("server running at http://127.0.0.1:7000");
